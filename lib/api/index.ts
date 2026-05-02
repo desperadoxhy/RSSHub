@@ -1,9 +1,11 @@
 // import { route as rulesRoute, handler as rulesHandler } from '@/api/radar/rules';
 import { OpenAPIHono } from '@hono/zod-openapi';
 import { Scalar } from '@scalar/hono-api-reference';
+import { z } from 'zod';
 
 import { handler as categoryOneHandler, route as categoryOneRoute } from '@/api/category/one';
 import { handler as followConfigHandler, route as followConfigRoute } from '@/api/follow/config';
+import { handler as imageProxyHandler, route as imageProxyRoute } from '@/api/image/proxy';
 import { handler as namespaceAllHandler, route as namespaceAllRoute } from '@/api/namespace/all';
 import { handler as namespaceOneHandler, route as namespaceOneRoute } from '@/api/namespace/one';
 import { handler as radarRulesAllHandler, route as radarRulesAllRoute } from '@/api/radar/rules/all';
@@ -19,6 +21,7 @@ app.openapi(radarRulesOneRoute, radarRulesOneHandler);
 app.openapi(categoryOneRoute, categoryOneHandler);
 app.openapi(routeStatusRoute, routeStatusHandler);
 app.openapi(followConfigRoute, followConfigHandler);
+app.openapi(imageProxyRoute, imageProxyHandler);
 
 const docs = app.getOpenAPI31Document({
     openapi: '3.1.0',
