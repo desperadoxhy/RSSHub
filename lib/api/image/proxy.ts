@@ -1,7 +1,7 @@
 import type { RouteHandler } from '@hono/zod-openapi';
 import { createRoute, z } from '@hono/zod-openapi';
 
-import { ofetch } from '@/utils/ofetch';
+import ofetch from '@/utils/ofetch';
 
 // 常见防盗链网站的 referer 映射
 const REFERER_MAP: Record<string, string> = {
